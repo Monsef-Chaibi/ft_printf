@@ -1,4 +1,4 @@
-SRC = main.c ft_putchar.c ft_printf.c
+SRC = main.c ft_printf.c ft_handle_format.c
 LIBFT_DIR = /home/monsef/Desktop/1337/ft_printf/Libft
 LIBFT = $(LIBFT_DIR)/libft.a
 CC  = gcc

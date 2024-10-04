@@ -3,8 +3,9 @@
 
 #include <unistd.h>
 #include <stdarg.h>
-void ft_printf(char *str, ...);
-void ft_putchar(char *str, char c);
+#include "Libft/libft.h"
 
+void ft_printf(const char *str, ...);
+int ft_handle_format(const char *str, int i, va_list args);
 
 #endif

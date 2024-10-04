@@ -1,10 +1,9 @@
 #include "ft_printf.h"
-#include "Libft/libft.h"
-
+#include <stdio.h>
 
 int main(){
     char c = 'A';
-    int i = ft_strlen("qewrfa");
-    ft_printf("The %c", ft_tolower(c));
+    char  *i = "Best one";
+    ft_printf("My Name is Monsef i have %d and i am the %s %c", 21, i, '!');
 
 }   
