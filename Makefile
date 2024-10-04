@@ -1,5 +1,5 @@
 SRC = main.c ft_putchar.c ft_printf.c
-LIBFT_DIR = /home/monsef/Desktop/1337/ft_printf/libft
+LIBFT_DIR = /home/monsef/Desktop/1337/ft_printf/Libft
 LIBFT = $(LIBFT_DIR)/libft.a
 CC  = gcc
 CFLAGS = -Wall -Wextra -Werror
