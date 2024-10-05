@@ -10,5 +10,11 @@ int ft_handle_format(const char *str, int i, va_list args)
         ft_putchar_fd((char)va_arg(args, int), 1);
     if (str[i] == 's')
         ft_putstr_fd(va_arg(args, char *), 1);
+    if (str[i] == '%')
+        ft_putchar_fd('%', 1);
+    if (str[i] == 'x')
+        ft_puthex(va_arg(args, int), 0);
+    if (str[i] == 'X')
+        ft_puthex(va_arg(args, int), 1);
     return (i);
 }
