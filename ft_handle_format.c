@@ -16,5 +16,7 @@ int ft_handle_format(const char *str, int i, va_list args)
         ft_puthex(va_arg(args, int), 0);
     if (str[i] == 'X')
         ft_puthex(va_arg(args, int), 1);
+    if (str[i] == 'u')
+        ft_putunbr(va_arg(args, unsigned int));
     return (i);
 }

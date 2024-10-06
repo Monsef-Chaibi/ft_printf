@@ -1,4 +1,4 @@
-#include "ft_printf.h"
+#include "libft.h"
 
 char ft_getchr(int n, int type) {
     char *str ;
