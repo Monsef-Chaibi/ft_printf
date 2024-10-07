@@ -1,6 +1,9 @@
 #include "ft_printf.h"
 #include <stdio.h>
 
+
+
+
 int main(){
     // char c = 'A';
     // char  *i = "Best one";
@@ -9,6 +12,6 @@ int main(){
     int a = 9;
     int *p = &a;
 
-    printf("%p", &p);
-
+    printf("%p\n", p);
+    ft_printf("%p", p);
 }   

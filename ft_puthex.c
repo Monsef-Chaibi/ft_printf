@@ -1,13 +1,15 @@
-#include "libft.h"
+#include "ft_printf.h"
 
-char ft_getchr(int n, int type) {
+char ft_getchr(int n, int type)
+{
     char *str ;
     
     str = (type == 0) ? "0123456789abcdef" : "0123456789ABCDEF" ;
     return str[n];    
 }
 
-void ft_puthex(int n, int type) {
+void ft_puthex(int n, int type)
+{
     char c;
 
     if (n >= 16) {

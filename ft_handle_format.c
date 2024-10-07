@@ -18,5 +18,10 @@ int ft_handle_format(const char *str, int i, va_list args)
         ft_puthex(va_arg(args, int), 1);
     if (str[i] == 'u')
         ft_putunbr(va_arg(args, unsigned int));
+    if (str[i] == 'p')
+    {
+        write(1, "0x", 2);
+        ft_putptr(va_arg(args,unsigned long int));
+    }
     return (i);
 }
