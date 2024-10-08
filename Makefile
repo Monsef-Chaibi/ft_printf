@@ -7,7 +7,7 @@ OUT = main
 
 all: $(LIBFT)
 	@clear
-	@$(CC) $(SRC) $(LIBFT) -o $(OUT)
+	@$(CC) $(CFLAGS) $(SRC) $(LIBFT) -o $(OUT)
 	@./$(OUT)
 
 $(LIBFT):
