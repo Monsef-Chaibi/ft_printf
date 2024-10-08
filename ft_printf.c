@@ -10,10 +10,14 @@ void ft_printf(const char *str, ...)
     while (str[i])
     {
         if (str[i] == '%')
+        {
+            if(str[i + 1] == '#')
+                i = ft_handle_flag(str, i, args);
+            else
             i = ft_handle_format(str, i, args);
+        }
         else
             ft_putchar_fd(str[i], 1);
-
         i++;
     }
 

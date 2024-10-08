@@ -5,8 +5,7 @@
 
 int main()
 {
-    ft_printf("Hello %s! You have %g new messages.\n", "", -5);
-    ft_printf("Hex: %x, Upper Hex: %X\n", 255, 255);
-    ft_printf("Unsigned: %u, Pointer: %p\n", 12345, (void*)&main);
+    printf("%o \n", 64);
     return 0;
 }
+
