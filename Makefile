@@ -1,4 +1,5 @@
-SRC = main.c ft_printf.c ft_handle_format.c ft_putunbr.c ft_puthex.c ft_putptr.c ft_putoct.c
+SRC = main.c ft_printf.c ft_handle_format.c ft_putunbr.c ft_puthex.c ft_putptr.c ft_putoct.c \
+	  ft_handle_flag.c
 LIBFT_DIR = ./Libft
 LIBFT = $(LIBFT_DIR)/libft.a
 CC  = gcc
