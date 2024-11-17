@@ -1,41 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchaibi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/13 13:18:22 by mchaibi           #+#    #+#             */
-/*   Updated: 2024/11/15 15:42:49 by mchaibi          ###   ########.fr       */
+/*   Created: 2024/11/15 15:12:10 by mchaibi           #+#    #+#             */
+/*   Updated: 2024/11/15 15:12:27 by mchaibi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
-int	ft_printf(const char *format, ...)
+size_t	ft_strlen(const char *s)
 {
-	va_list	args;
-	int		i;
-	int		count;
+	size_t	i;
 
 	i = 0;
-	va_start(args, format);
-	count = 0;
-	while (format[i])
-	{
-		if (format[i] == '%')
-		{
-			i++;
-			count += ft_handle_format(format[i], args);
-		}
-		else
-		{
-			ft_putchar(format[i]);
-			count++;
-		}
+	while (s[i] != '\0')
 		i++;
-	}
-	va_end(args);
-	return (count);
+	return (i);
 }

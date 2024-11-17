@@ -1,17 +1,28 @@
-#ifndef FTPRINTF_H
-#define FTPRINTF_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mchaibi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/13 13:25:04 by mchaibi           #+#    #+#             */
+/*   Updated: 2024/11/15 15:17:55 by mchaibi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdarg.h>
-#include "Libft/libft.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-void ft_printf(const char *str, ...);
-int ft_handle_format(const char *str, int i, va_list args);
-void ft_putunbr(unsigned int n);
-void ft_puthex(int n, int type);
-void ft_putptr(unsigned long int n);
-void ft_putoct(unsigned int n);
-void ft_putloct(unsigned long int n);
-int ft_handle_flag(const char *str, int i, va_list args);
+# include <stdarg.h>
+# include <unistd.h>
+
+int		ft_printf(const char *format, ...);
+int		ft_putunbr(unsigned int n);
+int		ft_handle_format(char c, va_list args);
+int		ft_puthex(int n, char x);
+int		ft_putchar(char c);
+int		ft_putnbr(int n);
+int		ft_putstr(char *s);
+size_t	ft_strlen(const char *s);
 
 #endif

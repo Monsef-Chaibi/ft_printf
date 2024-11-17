@@ -1,25 +1,27 @@
-SRC = main.c ft_printf.c ft_handle_format.c ft_putunbr.c ft_puthex.c ft_putptr.c ft_putoct.c \
-	  ft_handle_flag.c
-LIBFT_DIR = ./Libft
-LIBFT = $(LIBFT_DIR)/libft.a
-CC  = gcc
+NAME = libftprintf.a
+
+SRC = ft_printf.c ft_putunbr.c ft_handle_format.c ft_puthex.c ft_putnbr.c ft_strlen.c ft_putstr.c ft_putchar.c
+OBJ = $(SRC:.c=.o)
+
+HEADERS = ft_printf.h
+
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
-OUT = main
 
-all: $(LIBFT)
-	@clear
-	@$(CC) $(CFLAGS) $(SRC) $(LIBFT) -o $(OUT)
-	@./$(OUT)
+all: $(NAME)
 
-$(LIBFT):
-	@$(MAKE) -C $(LIBFT_DIR)
+$(NAME): $(OBJ)
+	ar rc $@ $^
+
+%.o: %.c $(HEADERS)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@rm -f $(OUT)
-	@$(MAKE) -C $(LIBFT_DIR) clean
+	rm -f $(OBJ)
 
 fclean: clean
-	@rm -f $(LIBFT)
-	@$(MAKE) -C $(LIBFT_DIR) fclean
+	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re

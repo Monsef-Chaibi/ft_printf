@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_handle_format.c                                 :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchaibi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 13:19:35 by mchaibi           #+#    #+#             */
-/*   Updated: 2024/11/15 15:34:57 by mchaibi          ###   ########.fr       */
+/*   Created: 2024/10/25 13:41:07 by mchaibi           #+#    #+#             */
+/*   Updated: 2024/11/15 15:36:03 by mchaibi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_handle_format(char c, va_list args)
+int	ft_putnbr(int n)
 {
 	int	count;
 
 	count = 0;
-	if (c == 'd' || c == 'i')
-		count = ft_putnbr(va_arg(args, int));
-	else if (c == 'u')
-		count = ft_putunbr(va_arg(args, unsigned int));
-	else if (c == 'c')
-		count = ft_putchar((char)va_arg(args, int));
-	else if (c == 's')
-		count = ft_putstr(va_arg(args, char *));
-	else if (c == 'x' || c == 'X')
-		count = ft_puthex(va_arg(args, int), c);
-	else if (c == '%')
-		count = ft_putchar('%');
+	if (n == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+		return (11);
+	}
+	if (n < 0)
+	{
+		ft_putchar('-');
+		n = -n;
+		count++;
+	}
+	if (n >= 10)
+	{
+		count += ft_putnbr(n / 10);
+	}
+	ft_putchar((n % 10) + '0');
+	count++;
 	return (count);
 }
