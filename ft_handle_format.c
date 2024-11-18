@@ -6,7 +6,7 @@
 /*   By: mchaibi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 13:19:35 by mchaibi           #+#    #+#             */
-/*   Updated: 2024/11/15 15:34:57 by mchaibi          ###   ########.fr       */
+/*   Updated: 2024/11/18 20:44:51 by mchaibi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ int	ft_handle_format(char c, va_list args)
 	else if (c == 's')
 		count = ft_putstr(va_arg(args, char *));
 	else if (c == 'x' || c == 'X')
-		count = ft_puthex(va_arg(args, int), c);
+		count = ft_puthex(va_arg(args, unsigned long), c);
+	else if (c == 'p')
+		count = ft_putptr(va_arg(args, unsigned long));
 	else if (c == '%')
 		count = ft_putchar('%');
 	return (count);
