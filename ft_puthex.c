@@ -6,7 +6,7 @@
 /*   By: mchaibi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 16:41:44 by mchaibi           #+#    #+#             */
-/*   Updated: 2024/11/18 20:10:01 by mchaibi          ###   ########.fr       */
+/*   Updated: 2024/12/05 11:46:41 by mchaibi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	ft_getchr(int n, char x)
 	return (str[n]);
 }
 
-int	ft_puthex(unsigned long n, char x)
+int	ft_puthex(unsigned int n, char x)
 {
 	char	c;
 	int		count;

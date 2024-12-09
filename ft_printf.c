@@ -6,12 +6,11 @@
 /*   By: mchaibi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:18:22 by mchaibi           #+#    #+#             */
-/*   Updated: 2024/11/15 15:42:49 by mchaibi          ###   ########.fr       */
+/*   Updated: 2024/12/09 10:33:16 by mchaibi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 int	ft_printf(const char *format, ...)
 {
